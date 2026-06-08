@@ -1,0 +1,80 @@
+/* ============================================================
+   variables.css
+   Tokens globales: colores, tipografía, espaciados, sombras.
+   Editá acá y el cambio se propaga a toda la página.
+   ============================================================ */
+
+:root {
+
+  /* ── PALETA PRINCIPAL ────────────────────────────────────────
+     Azules elegantes con acento dorado/champagne.
+     --color-1   más oscuro (fondos, textos sobre claro)
+     --color-2   azul medio (secciones acento)
+     --color-3   azul suave (fondos secundarios)
+     --color-4   casi blanco azulado (fondos claros)
+  ──────────────────────────────────────────────────────────── */
+  --color-1:        #1a2a4a;   /* azul marino profundo */
+  --color-2:        #2e4a7a;   /* azul medio */
+  --color-3:        #5b7fa6;   /* azul grisáceo suave */
+  --color-4:        #dce8f5;   /* azul casi blanco */
+  --color-acento:   #c9a96e;   /* dorado/champagne — contrasta con los azules */
+  --color-acento-2: #e8d5b0;   /* dorado claro — para detalles sutiles */
+
+  /* ── TEXTOS ─────────────────────────────────────────────────*/
+  --texto-oscuro:   #1a2a4a;   /* igual que color-1, para párrafos sobre fondo claro */
+  --texto-claro:    #f0f4f9;   /* para textos sobre fondos oscuros */
+  --texto-suave:    #7a9bbf;   /* subtítulos, datos secundarios */
+
+  /* ── FONDOS DE SECCIONES ────────────────────────────────────
+     Las secciones alternan entre claro y acento para dar ritmo.
+  ──────────────────────────────────────────────────────────── */
+  --fondo-seccion:        rgba(240, 246, 255, 0.88);  /* sección normal — blanco azulado translúcido */
+  --fondo-seccion-acento: rgba(30, 52, 90, 0.814);     /* sección acento — azul oscuro translúcido */
+
+  /* ── TIPOGRAFÍA ─────────────────────────────────────────────*/
+  --fuente-titulo: 'Playfair Display', Georgia, serif;
+  --fuente-cuerpo: 'Lato', Arial, sans-serif;
+
+  --tamaño-base:   16px;
+  --tamaño-sm:     0.875rem;  /* 14px */
+  --tamaño-md:     1rem;      /* 16px */
+  --tamaño-lg:     1.25rem;   /* 20px */
+  --tamaño-xl:     1.75rem;   /* 28px */
+  --tamaño-2xl:    2.5rem;    /* 40px */
+  --tamaño-3xl:    4rem;      /* 64px */
+
+  --peso-normal:   400;
+  --peso-medio:    500; /* Lato no tiene 500, usa 400 o 700 */
+  --peso-bold:     700;
+
+  --altura-linea:  1.65;
+
+  /* ── ESPACIADOS ─────────────────────────────────────────────*/
+  --espacio-xs:    0.5rem;    /*  8px */
+  --espacio-sm:    1rem;      /* 16px */
+  --espacio-md:    1.5rem;    /* 24px */
+  --espacio-lg:    2.5rem;    /* 40px */
+  --espacio-xl:    4rem;      /* 64px */
+  --espacio-2xl:   6rem;      /* 96px */
+
+  /* ── BORDES Y REDONDEOS ─────────────────────────────────────*/
+  --radio-sm:      6px;
+  --radio-md:      12px;
+  --radio-lg:      20px;
+  --radio-pill:    999px;
+
+  /* ── SOMBRAS ────────────────────────────────────────────────*/
+  --sombra-sm:  0 2px 8px rgba(26, 42, 74, 0.12);
+  --sombra-md:  0 4px 20px rgba(26, 42, 74, 0.18);
+  --sombra-lg:  0 8px 40px rgba(26, 42, 74, 0.25);
+
+  /* ── TRANSICIONES ───────────────────────────────────────────*/
+  --transicion-rapida:  0.2s ease;
+  --transicion-normal:  0.4s ease;
+  --transicion-lenta:   0.7s ease;
+
+  /* ── CONTENEDOR ─────────────────────────────────────────────*/
+  --ancho-contenedor:        600px;   /* móvil: ignora esto, usa 100% */
+  --ancho-contenedor-angosto: 480px;
+  --padding-contenedor:      1.25rem; /* padding lateral en móvil */
+}

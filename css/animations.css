@@ -1,0 +1,131 @@
+/* ============================================================
+   animations.css
+   Animaciones y transiciones de la página.
+   Todo lo que "se mueve" está acá.
+   ============================================================ */
+
+
+/* ── FADE IN GENERAL ─────────────────────────────────────────── */
+/* La clase .visible la agrega main.js al hacer scroll.
+   Los estilos base (opacity: 0, transform) están en styles.css
+   dentro de .seccion y #hero. Acá solo definimos keyframes
+   que podés usar si necesitás algo más específico. */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
+/* ── HERO — animación de entrada ─────────────────────────────── */
+/* El hero arranca visible (main.js le agrega .visible enseguida)
+   pero le damos una animación de entrada más elaborada a sus hijos */
+
+#hero.visible .hero__pre-titulo {
+  animation: fadeInUp 0.8s ease both;
+  animation-delay: 0.1s;
+}
+
+#hero.visible .hero__numero {
+  animation: fadeInUp 0.8s ease both;
+  animation-delay: 0.3s;
+}
+
+#hero.visible .hero__nombre {
+  animation: fadeInUp 0.8s ease both;
+  animation-delay: 0.5s;
+}
+
+#hero.visible .hero__apellido {
+  animation: fadeInUp 0.8s ease both;
+  animation-delay: 0.7s;
+}
+
+
+/* ── CONTADOR — pulso en los segundos ────────────────────────── */
+/* Sutil pulso para darle vida al contador */
+@keyframes pulso {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+#contador-segundos {
+  animation: pulso 1s ease infinite;
+}
+
+
+/* ── BOTÓN DE MÚSICA — latido cuando está activo ─────────────── */
+@keyframes latido {
+  0%   { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.5); }
+  70%  { box-shadow: 0 0 0 10px rgba(201, 169, 110, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0); }
+}
+
+.music-btn--activo {
+  animation: latido 2s ease infinite;
+}
+
+
+/* ── CARRUSEL — transición de las flechas ────────────────────── */
+/* El JS ya maneja la transición del track; acá animamos la flecha al presionar */
+.carrusel__flecha:active {
+  transform: translateY(-50%) scale(0.9);
+}
+
+
+/* ── BOTONES — efecto ripple suave ───────────────────────────── */
+/* Al hacer tap/click, se escala levemente (ya está en styles.css con :active)
+   Acá agregamos un brillo extra para los botones principales */
+.btn--principal {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--principal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.2s ease;
+}
+
+.btn--principal:hover::after {
+  background: rgba(255,255,255,0.08);
+}
+
+
+/* ── PALETA DE COLORES DEL DRESSCODE — hover ─────────────────── */
+.dresscode__color {
+  transition: transform var(--transicion-rapida);
+}
+
+.dresscode__color:hover {
+  transform: scale(1.15);
+}
+
+
+/* ── FOTO DECORATIVA — parallax suave ───────────────────────── */
+/* Si querés parallax en la foto de Fiama, lo podés activar con JS.
+   Acá le damos solo una transición de escala suave al cargar */
+.seccion-foto-decorativa.visible .foto-decorativa__imagen {
+  animation: fadeIn 1.2s ease both;
+}
+
+
+/* ── ITEMS DEL CONTADOR — entrada escalonada ─────────────────── */
+#contador.visible .contador__item:nth-child(1) { animation: fadeInUp 0.5s ease both; animation-delay: 0.1s; }
+#contador.visible .contador__item:nth-child(2) { animation: fadeInUp 0.5s ease both; animation-delay: 0.2s; }
+#contador.visible .contador__item:nth-child(3) { animation: fadeInUp 0.5s ease both; animation-delay: 0.3s; }
+#contador.visible .contador__item:nth-child(4) { animation: fadeInUp 0.5s ease both; animation-delay: 0.4s; }

@@ -1,0 +1,219 @@
+/* ============================================================
+   responsive.css
+   Ajustes para tablet (600px+) y desktop (960px+).
+   La base en styles.css ya está pensada para celular.
+   Acá solo corregimos lo que cambia en pantallas más grandes.
+   ============================================================ */
+
+
+/* ════════════════════════════════════════════════════════════
+   TABLET — 600px en adelante
+   ════════════════════════════════════════════════════════════ */
+@media (min-width: 600px) {
+
+  /* Contenedores: empiezan a tener margen lateral */
+  .contenedor {
+    padding: 0 2rem;
+  }
+
+  /* Secciones: más aire vertical */
+  .seccion {
+    padding: var(--espacio-2xl) 0;
+  }
+
+  /* Títulos de sección más grandes */
+  .seccion__titulo {
+    font-size: var(--tamaño-2xl);
+  }
+
+  /* Hero: número más grande */
+  .hero__numero {
+    font-size: 5.5rem;
+  }
+
+  .hero__nombre {
+    font-size: 3.5rem;
+  }
+
+  /* Contador: los 4 items en fila sin wrap */
+  .contador__grid {
+    flex-wrap: nowrap;
+    gap: var(--espacio-md);
+  }
+
+  .contador__item {
+    min-width: 90px;
+    padding: var(--espacio-md) var(--espacio-lg);
+  }
+
+  .contador__valor {
+    font-size: 3rem;
+  }
+
+  /* Fecha: los items en fila */
+  .fecha__contenido {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--espacio-xl);
+  }
+
+  /* Carrusel: fotos un poco más grandes */
+  .carrusel__item {
+    width: 300px;
+    height: 370px;
+  }
+
+  /* Flechas del carrusel: más grandes y alejadas del borde */
+  .carrusel__flecha {
+    width: 48px;
+    height: 48px;
+    font-size: 1.8rem;
+  }
+
+  .carrusel__flecha--prev {
+    left: 16px;
+  }
+
+  .carrusel__flecha--next {
+    right: 16px;
+  }
+
+  /* Foto decorativa: más alta */
+  .foto-decorativa__imagen {
+    height: 80vh;
+  }
+
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   DESKTOP — 960px en adelante
+   ════════════════════════════════════════════════════════════ */
+@media (min-width: 960px) {
+
+  /* Contenedores más anchos */
+  :root {
+    --ancho-contenedor:        720px;
+    --ancho-contenedor-angosto: 560px;
+    --padding-contenedor:      2.5rem;
+  }
+
+  /* Hero */
+  .hero__numero {
+    font-size: var(--tamaño-3xl); /* 4rem */
+  }
+
+  .hero__nombre {
+    font-size: var(--tamaño-2xl);
+  }
+
+  .hero__pre-titulo,
+  .hero__apellido {
+    font-size: var(--tamaño-md);
+  }
+
+  /* El fondo fijo (background-attachment: fixed) funciona bien en desktop;
+     en móvil lo desactivamos porque causa problemas de rendimiento */
+  body.page-bg {
+    background-attachment: fixed;
+  }
+
+  /* Contador */
+  .contador__valor {
+    font-size: 3.5rem;
+  }
+
+  /* Carrusel: fotos más grandes en desktop */
+  .carrusel__item {
+    width: 320px;
+    height: 400px;
+    margin: 0 10px;
+    /* Si cambiás el margin o el width, actualizá ANCHO_ITEM en gallery.js:
+       ANCHO_ITEM = 320 + 10 + 10 = 340 */
+  }
+
+  /* Flechas más alejadas en desktop */
+  .carrusel__flecha--prev {
+    left: 24px;
+  }
+
+  .carrusel__flecha--next {
+    right: 24px;
+  }
+
+  /* El botón de música un poco más grande */
+  .music-btn {
+    width: 58px;
+    height: 58px;
+    font-size: 1.5rem;
+  }
+
+  /* Foto decorativa */
+  .foto-decorativa__imagen {
+    height: 90vh;
+  }
+
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   CORRECCIONES MÓVIL ESPECÍFICAS
+   Cosas que solo aplican en pantallas pequeñas.
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 599px) {
+
+  /* background-attachment: fixed causa problemas en iOS Safari —
+     lo desactivamos en móvil */
+  body.page-bg {
+    background-attachment: scroll;
+  }
+
+  /* Botones: ancho completo en móvil para fácil tap */
+  .btn--principal,
+  .btn--secundario,
+  .btn--whatsapp {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Excepto el botón del calendario (es más discreto) */
+  #fecha .btn {
+    display: inline-block;
+    width: auto;
+  }
+
+  /* El número del hero es más chico en pantallas muy pequeñas */
+  .hero__numero {
+    font-size: 3.5rem;
+  }
+
+  .hero__nombre {
+    font-size: 2rem;
+  }
+
+  /* Mapa de lugar: altura menor en móvil */
+  .lugar__mapa iframe {
+    height: 250px;
+  }
+
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   ACCESIBILIDAD — reduce animaciones si el usuario lo prefiere
+   ════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .seccion,
+  #hero,
+  .seccion-foto-decorativa {
+    opacity: 1;
+    transform: none;
+  }
+}

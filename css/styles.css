@@ -1,0 +1,700 @@
+/* ============================================================
+   styles.css
+   Estilos base. Mobile-first: todo está pensado para celular.
+   Tablet y desktop se ajustan en responsive.css.
+   ============================================================ */
+
+
+/* ── RESET BÁSICO ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--tamaño-base);
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+/* ── BODY Y FONDO DE PÁGINA ──────────────────────────────────── */
+body {
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--tamaño-md);
+  line-height: var(--altura-linea);
+  color: var(--texto-oscuro);
+  background-color: var(--color-1);
+}
+
+/* Fondo estático que se verá alrededor de las secciones */
+body.page-bg {
+  background-image: url('../assets/images/gallery/fondo.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Si no hay imagen de fondo, el degradado de respaldo se ve bien igual */
+body.page-bg:not([style]) {
+  background-image: linear-gradient(160deg, var(--color-1) 0%, var(--color-2) 100%);
+}
+
+
+/* ── CONTENEDOR ──────────────────────────────────────────────── */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-contenedor);
+  margin: 0 auto;
+  padding: 0 var(--padding-contenedor);
+}
+
+.contenedor--angosto {
+  max-width: var(--ancho-contenedor-angosto);
+}
+
+
+/* ── SECCIONES ───────────────────────────────────────────────── */
+.seccion {
+  padding: var(--espacio-xl) 0;
+  background: var(--fondo-seccion);
+
+  /* Animación de entrada (main.js agrega la clase .visible) */
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--transicion-lenta), transform var(--transicion-lenta);
+}
+
+.seccion.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Secciones con fondo oscuro (azul acento) */
+.seccion--acento {
+  background: var(--fondo-seccion-acento);
+  color: var(--texto-claro);
+}
+
+.seccion--acento .seccion__titulo {
+  color: var(--color-acento);
+}
+
+.seccion--acento .seccion__subtitulo {
+  color: var(--color-acento-2);
+}
+
+/* Títulos de sección */
+.seccion__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-2);
+  text-align: center;
+  margin-bottom: var(--espacio-sm);
+  letter-spacing: 0.03em;
+}
+
+.seccion__subtitulo {
+  font-size: var(--tamaño-sm);
+  color: var(--texto-suave);
+  text-align: center;
+  margin-bottom: var(--espacio-lg);
+}
+
+
+/* ── BOTONES ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radio-pill);
+  font-family: var(--fuente-cuerpo);
+  font-size: var(--tamaño-md);
+  font-weight: var(--peso-bold);
+  letter-spacing: 0.04em;
+  text-align: center;
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida), opacity var(--transicion-rapida);
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Botón principal — dorado sobre oscuro */
+.btn--principal {
+  background: var(--color-acento);
+  color: var(--color-1);
+  box-shadow: var(--sombra-sm);
+}
+
+.btn--principal:hover {
+  box-shadow: var(--sombra-md);
+  opacity: 0.9;
+}
+
+/* Botón secundario — borde azul */
+.btn--secundario {
+  background: transparent;
+  border: 2px solid var(--color-acento);
+  color: var(--color-acento);
+}
+
+.btn--secundario:hover {
+  background: var(--color-acento);
+  color: var(--color-1);
+}
+
+/* Botón grande */
+.btn--grande {
+  padding: 1rem 2.5rem;
+  font-size: var(--tamaño-lg);
+}
+
+/* Botón WhatsApp */
+.btn--whatsapp {
+  background: #25d366;
+  color: #fff;
+  box-shadow: var(--sombra-sm);
+  padding: 0.85rem 2rem;
+  border-radius: var(--radio-pill);
+  font-weight: var(--peso-bold);
+  display: inline-block;
+  transition: opacity var(--transicion-rapida);
+}
+
+.btn--whatsapp:hover {
+  opacity: 0.88;
+}
+
+
+/* ── BOTÓN DE MÚSICA (fijo en pantalla) ──────────────────────── */
+.music-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-1);
+  border: 2px solid var(--color-acento);
+  color: var(--color-acento);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-md);
+  transition: transform var(--transicion-rapida), background var(--transicion-rapida);
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+  background: var(--color-2);
+}
+
+/* Muestra el ícono correcto según el estado */
+.music-btn__icono--pausa {
+  display: none;
+}
+
+.music-btn--activo .music-btn__icono--play {
+  display: none;
+}
+
+.music-btn--activo .music-btn__icono--pausa {
+  display: inline;
+}
+
+
+/* ── HERO ────────────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh; /* svh: respeta la barra del navegador en celular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--transicion-lenta), transform var(--transicion-lenta);
+}
+
+#hero.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 42, 74, 0.45) 0%,
+    rgba(26, 42, 74, 0.96) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--texto-claro);
+  padding: var(--espacio-lg) var(--padding-contenedor);
+}
+
+.hero__pre-titulo {
+  font-size: var(--tamaño-sm);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-acento-2);
+  margin-bottom: var(--espacio-sm);
+}
+
+.hero__titulo {
+  font-family: var(--fuente-titulo);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.hero__numero {
+  font-size: var(--tamaño-3xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-acento);
+  line-height: 1;
+}
+
+.hero__nombre {
+  font-size: var(--tamaño-2xl);
+  font-style: italic;
+  font-weight: var(--peso-normal);
+  color: var(--texto-claro);
+}
+
+.hero__apellido {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-lg);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-acento-2);
+  margin-top: var(--espacio-xs);
+}
+
+
+/* ── CONTADOR ────────────────────────────────────────────────── */
+.contador__grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-sm);
+  flex-wrap: wrap;
+  margin-top: var(--espacio-md);
+}
+
+.contador__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(26, 42, 74, 0.07);
+  border: 1px solid var(--color-4);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-sm) var(--espacio-md);
+  min-width: 72px;
+}
+
+.seccion--acento .contador__item {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.contador__valor {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-2xl);
+  font-weight: var(--peso-bold);
+  color: var(--color-acento);
+  line-height: 1;
+}
+
+.contador__label {
+  font-size: var(--tamaño-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+
+/* ── BIENVENIDA ──────────────────────────────────────────────── */
+.bienvenida__cuerpo {
+  text-align: center;
+}
+
+.bienvenida__cuerpo p {
+  font-size: var(--tamaño-lg);
+  font-family: var(--fuente-titulo);
+  font-style: italic;
+  color: var(--texto-oscuro);
+  line-height: 1.8;
+  margin-bottom: var(--espacio-md);
+}
+
+.bienvenida__firma {
+  font-size: var(--tamaño-md) !important;
+  font-style: normal !important;
+  color: var(--color-3) !important;
+  letter-spacing: 0.05em;
+}
+
+
+/* ── FECHA ───────────────────────────────────────────────────── */
+.fecha__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-sm);
+  margin-bottom: var(--espacio-lg);
+}
+
+.fecha__item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-sm);
+}
+
+.fecha__icono {
+  font-size: 1.5rem;
+}
+
+.fecha__dato {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-xl);
+  color: var(--texto-claro);
+}
+
+/* El botón de calendario queda centrado */
+#fecha .btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+/* ── LUGAR ───────────────────────────────────────────────────── */
+.lugar__info {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacio-sm);
+  margin-bottom: var(--espacio-md);
+}
+
+.lugar__icono {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.lugar__nombre {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-lg);
+  font-weight: var(--peso-bold);
+  color: var(--color-1);
+  margin-bottom: 4px;
+}
+
+.lugar__direccion {
+  color: var(--texto-suave);
+  font-size: var(--tamaño-sm);
+}
+
+.lugar__mapa {
+  width: 100%;
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  margin-bottom: var(--espacio-md);
+  box-shadow: var(--sombra-md);
+}
+
+.lugar__mapa iframe {
+  display: block;
+  width: 100%;
+}
+
+#lugar .btn {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+
+/* ── DRESS CODE ──────────────────────────────────────────────── */
+.dresscode__contenido {
+  text-align: center;
+}
+
+.dresscode__estilo {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-xl);
+  font-style: italic;
+  color: var(--color-acento);
+  margin-bottom: var(--espacio-sm);
+}
+
+.dresscode__contenido p {
+  color: var(--texto-claro);
+  margin-bottom: var(--espacio-xs);
+}
+
+.dresscode__paleta {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-md);
+}
+
+.dresscode__color {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: block;
+  box-shadow: var(--sombra-sm);
+  border: 2px solid rgba(255,255,255,0.3);
+}
+
+
+/* ── REGALO ──────────────────────────────────────────────────── */
+.regalo__contenido {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-md);
+}
+
+.regalo__icono {
+  font-size: 2.5rem;
+}
+
+.regalo__datos {
+  background: var(--color-4);
+  border-radius: var(--radio-md);
+  padding: var(--espacio-md);
+  border: 1px solid var(--color-3);
+  width: 100%;
+  max-width: 320px;
+}
+
+.regalo__datos p {
+  margin-bottom: var(--espacio-xs);
+  font-size: var(--tamaño-sm);
+}
+
+
+/* ── GALERÍA — CARRUSEL ──────────────────────────────────────── */
+.carrusel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;  /* IMPORTANTE: no cambies esto, es lo que oculta las fotos que salen del viewport */
+  padding: var(--espacio-md) 0;
+}
+
+.carrusel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrusel__track {
+  display: flex;
+  /* El JS controla el transform; no pongas transition acá */
+  will-change: transform;
+}
+
+.carrusel__item {
+  flex-shrink: 0;
+  width: 260px;         /* mismo valor que ANCHO_ITEM en gallery.js (menos los márgenes) */
+  height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radio-md);
+  margin: 0 8px;        /* 8px a cada lado = 16px total → ANCHO_ITEM en gallery.js = 276 */
+  box-shadow: var(--sombra-md);
+}
+
+/* NOTA: si cambiás el width de .carrusel__item o el margin,
+   actualizá también la constante ANCHO_ITEM en js/gallery.js.
+   ANCHO_ITEM = width + margin izquierdo + margin derecho */
+
+.carrusel__flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(26, 42, 74, 0.75);
+  color: var(--color-acento);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--sombra-sm);
+  transition: background var(--transicion-rapida);
+}
+
+.carrusel__flecha:hover {
+  background: var(--color-2);
+}
+
+.carrusel__flecha--prev {
+  left: 8px;
+}
+
+.carrusel__flecha--next {
+  right: 8px;
+}
+
+/* Títulos de galería: el contenedor está dentro de la sección */
+#galeria .contenedor {
+  margin-bottom: var(--espacio-md);
+}
+
+#galeria .seccion__subtitulo {
+  margin-bottom: 0;
+}
+
+
+/* ── MÚSICA (pedidos de canciones) ───────────────────────────── */
+.musica__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-md);
+  text-align: center;
+}
+
+.musica__icono {
+  font-size: 2.5rem;
+}
+
+
+/* ── COMPARTIR FOTOS ─────────────────────────────────────────── */
+.compartir__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-md);
+  text-align: center;
+}
+
+.compartir__icono {
+  font-size: 2.5rem;
+}
+
+
+/* ── DEDICATORIA ─────────────────────────────────────────────── */
+.dedicatoria__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-md);
+  text-align: center;
+}
+
+.dedicatoria__icono {
+  font-size: 2.5rem;
+}
+
+
+/* ── FOTO DECORATIVA ─────────────────────────────────────────── */
+.seccion-foto-decorativa {
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+  display: block;
+
+  opacity: 0;
+  transition: opacity var(--transicion-lenta);
+}
+
+.seccion-foto-decorativa.visible {
+  opacity: 1;
+}
+
+.foto-decorativa__imagen {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+
+/* ── CONFIRMACIÓN (RSVP) ─────────────────────────────────────── */
+.rsvp__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacio-md);
+  text-align: center;
+}
+
+.rsvp__icono {
+  font-size: 2.5rem;
+}
+
+.rsvp__o {
+  color: var(--color-acento-2);
+  font-size: var(--tamaño-sm);
+  letter-spacing: 0.1em;
+}
+
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.footer {
+  background: var(--color-1);
+  color: var(--color-acento-2);
+  text-align: center;
+  padding: var(--espacio-lg) var(--padding-contenedor);
+  font-size: var(--tamaño-sm);
+  letter-spacing: 0.08em;
+}
