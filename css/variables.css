@@ -42,6 +42,7 @@
   --tamaño-xl:     1.75rem;   /* 28px */
   --tamaño-2xl:    2.5rem;    /* 40px */
   --tamaño-3xl:    4rem;      /* 64px */
+  --tamaño-4xl:    10rem; 
 
   --peso-normal:   400;
   --peso-medio:    500; /* Lato no tiene 500, usa 400 o 700 */

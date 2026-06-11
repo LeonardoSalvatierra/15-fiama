@@ -300,8 +300,8 @@ body.page-bg:not([style]) {
 }
 
 .hero__numero {
-  font-size: var(--tamaño-3xl);
-  font-weight: var(--peso-bold);
+  font-size: var(--tamaño-4xl);
+  font-weight: var(--peso-normal);
   color: var(--color-acento);
   line-height: 1;
 }

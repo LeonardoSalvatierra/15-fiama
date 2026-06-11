@@ -183,15 +183,6 @@
     width: auto;
   }
 
-  /* El número del hero es más chico en pantallas muy pequeñas */
-  .hero__numero {
-    font-size: 3.5rem;
-  }
-
-  .hero__nombre {
-    font-size: 2rem;
-  }
-
   /* Mapa de lugar: altura menor en móvil */
   .lugar__mapa iframe {
     height: 250px;
