@@ -279,15 +279,15 @@ body.page-bg:not([style]) {
   z-index: 1;
   text-align: center;
   color: var(--texto-claro);
-  padding: var(--espacio-lg) var(--padding-contenedor);
+  padding: var(--espacio-2xl) var(--padding-contenedor) var(--espacio-lg);
 }
 
 .hero__pre-titulo {
-  font-size: var(--tamaño-sm);
+  font-size: var(--tamaño-md);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-acento-2);
-  margin-bottom: var(--espacio-sm);
+  margin-bottom: var(--espacio-2xl);
 }
 
 .hero__titulo {
@@ -295,8 +295,6 @@ body.page-bg:not([style]) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 1;
-  margin-bottom: 0.25rem;
 }
 
 .hero__numero {
@@ -307,28 +305,29 @@ body.page-bg:not([style]) {
 }
 
 .hero__nombre {
-  font-size: var(--tamaño-2xl);
+  font-size: var(--tamaño-3xl);
   font-style: italic;
   font-weight: var(--peso-normal);
   color: var(--texto-claro);
+  margin-top: var(--espacio-lg);
 }
 
 .hero__apellido {
   font-family: var(--fuente-titulo);
-  font-size: var(--tamaño-lg);
+  font-size: var(--tamaño-2xl);
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--color-acento-2);
-  margin-top: var(--espacio-xs);
+  line-height: 1;
 }
 
 
 /* ── CONTADOR ────────────────────────────────────────────────── */
 .contador__grid {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  gap: var(--espacio-sm);
-  flex-wrap: wrap;
+  gap: var(--espacio-xs);
   margin-top: var(--espacio-md);
 }
 
@@ -340,7 +339,8 @@ body.page-bg:not([style]) {
   border: 1px solid var(--color-4);
   border-radius: var(--radio-md);
   padding: var(--espacio-sm) var(--espacio-md);
-  min-width: 72px;
+  min-width: 0;
+  width: 7rem;
 }
 
 .seccion--acento .contador__item {
