@@ -50,20 +50,26 @@ body {
   background-color: var(--color-1);
 }
 
-/* Fondo estático que se verá alrededor de las secciones */
-body.page-bg {
-  background-image: url('../assets/images/gallery/fondo.jpg');
-  background-attachment: fixed;
-  background-size: cover;
+.fondo-fijo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Usamos svh (short viewport height) para evitar que la barra de navegación del celular rompa el diseño */
+  height: 100svh; 
+  
+  /* Cargamos tu imagen vertical en HD */
+  background-image: url('../assets/images/deco/fondo-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Lo enviamos al fondo absoluto detrás de todo el contenido */
+  z-index: -1; 
+  
+  /* Optimización para que los navegadores móviles procesen mejor la imagen */
+  will-change: transform;
 }
-
-/* Si no hay imagen de fondo, el degradado de respaldo se ve bien igual */
-body.page-bg:not([style]) {
-  background-image: linear-gradient(160deg, var(--color-1) 0%, var(--color-2) 100%);
-}
-
 
 /* ── CONTENEDOR ──────────────────────────────────────────────── */
 .contenedor {
@@ -81,7 +87,6 @@ body.page-bg:not([style]) {
 /* ── SECCIONES ───────────────────────────────────────────────── */
 .seccion {
   padding: var(--espacio-xl) 0;
-  background: var(--fondo-seccion);
 
   /* Animación de entrada (main.js agrega la clase .visible) */
   opacity: 0;
@@ -274,6 +279,17 @@ body.page-bg:not([style]) {
   );
 }
 
+.hero__glitter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20rem;
+  background-image: url('/assets/images/deco/glitter-rosa-d.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .hero__content {
   position: relative;
   z-index: 1;
@@ -368,6 +384,17 @@ body.page-bg:not([style]) {
 /* ── BIENVENIDA ──────────────────────────────────────────────── */
 .bienvenida__cuerpo {
   text-align: center;
+}
+
+.bienvenida__glitter {
+  position:absolute;
+  top: 100;
+  left: 0;
+  width: 100%;
+  height: 20rem;
+  background-image: url('/assets/images/deco/glitter-rosa.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .bienvenida__cuerpo p {
