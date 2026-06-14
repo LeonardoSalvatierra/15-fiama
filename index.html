@@ -86,6 +86,7 @@
         />
         <!-- Overlay para que el texto se lea bien sobre la imagen -->
         <div class="hero__overlay"></div>
+        <div class="hero__glitter-up"></div>
         <div class="hero__glitter"></div>
       </div>
 
@@ -111,16 +112,17 @@
     <div class="bienvenida__glitter"></div>
     <section id="bienvenida" class="seccion">
       <div class="contenedor contenedor--angosto">
+        <div class="bienvenida-cuadro">
+          <h2 class="seccion__titulo">¡Hola!</h2>
 
-        <h2 class="seccion__titulo">¡Hola!</h2>
-
-        <div class="bienvenida__cuerpo">
+          <div class="bienvenida__cuerpo">
           <p>
             Con inmensa alegría y emoción, quiero invitarte a compartir
-            conmigo el día más especial de mi vida: mis 15 años.
-            Sería un honor tenerte a mi lado en esta noche mágica.
+            conmigo uno de los días más especiales de mi vida: <strong>mis 15 años.</strong>
+            Sería grandioso tenerte a mi lado en esta noche mágica.
           </p>
-          <p class="bienvenida__firma">Con amor, <strong>Fiama</strong> 🌸</p>
+          <p class="bienvenida__firma">Con amor, <strong>Fiama</strong> </p>
+          </div>
         </div>
 
       </div>
@@ -173,15 +175,15 @@
     <section id="fecha" class="seccion seccion--acento">
       <div class="contenedor">
 
-        <h2 class="seccion__titulo">La Noche</h2>
+        <h2 class="seccion__titulo">Fecha del evento</h2>
 
         <div class="fecha__contenido">
           <div class="fecha__item">
-            <span class="fecha__icono" aria-hidden="true">📅</span>
+            <img src="assets/images/iconos/azul-calendar.png" alt="calendario azul" class="fecha__icono" loading="lazy" />
             <p class="fecha__dato">Viernes, 19 de septiembre de 2026</p>
           </div>
           <div class="fecha__item">
-            <span class="fecha__icono" aria-hidden="true">🕘</span>
+            <img src="assets/images/iconos/azul-clock.png" alt="reloj azul" class="fecha__icono" loading="lazy" />
             <p class="fecha__dato">21:00 hs</p>
           </div>
         </div>
@@ -194,7 +196,7 @@
         -->
         <a
           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=15+años+Fiama+Medina&dates=20250919T210000/20250920T030000&location=NOMBRE+DEL+SALÓN,+Rosario,+Santa+Fe"
-          class="btn btn--secundario"
+          class="btn btn--principal"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -220,22 +222,19 @@
         <div class="lugar__info">
           <span class="lugar__icono" aria-hidden="true">📍</span>
           <div>
-            <p class="lugar__nombre">Nombre del Salón</p>
-            <p class="lugar__direccion">Dirección, Rosario, Santa Fe</p>
+            <p class="lugar__nombre">St Mary eventos</p>
+            <p class="lugar__direccion">La República 7632, Rosario</p>
           </div>
         </div>
 
         <div class="lugar__mapa">
-          <iframe
-            src="https://www.google.com/maps?q=Rosario,+Santa+Fe,+Argentina&output=embed"
-            width="100%"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.2187610673823!2d-60.726236!3d-32.91881800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b652e3e6d47021%3A0xb04cd5a10d3b2a82!2sSt.Mary%20Club%20de%20eventos%2C%20sal%C3%B3n%20infantil%20y%20colonia%20de%20vacaciones!5e0!3m2!1ses-419!2sar!4v1781385876991!5m2!1ses-419!2sar" width="100%"
             height="350"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación del evento"
-          ></iframe>
+            title="Ubicación del evento"></iframe>
         </div>
 
         <a

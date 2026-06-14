@@ -17,7 +17,7 @@
   --color-2:        rgb(86, 129, 186);   /* azul medio */
   --color-3:        rgb(122, 156, 218);   /* azul grisáceo suave */
   --color-4:        rgb(220, 232, 245);   /* azul casi blanco */
-  --color-acento:   rgb(201, 181, 110);   /* dorado/champagne — contrasta con los azules */
+  --color-acento:   rgb(228, 199, 105);   /* dorado/champagne — contrasta con los azules */
   --color-acento-2: rgb(232, 213, 176);   /* dorado claro — para detalles sutiles */
 
   /* ── TEXTOS ─────────────────────────────────────────────────*/
@@ -29,7 +29,7 @@
      Las secciones alternan entre claro y acento para dar ritmo.
   ──────────────────────────────────────────────────────────── */
   --fondo-seccion:        rgb(231, 223, 249);  /* sección normal — blanco azulado translúcido */
-  --fondo-seccion-acento: rgba(30, 52, 90, 0.814);     /* sección acento — azul oscuro translúcido */
+  --fondo-seccion-acento: rgba(26, 46, 82, 0.875);     /* sección acento — azul oscuro translúcido */
 
   /* ── TIPOGRAFÍA ─────────────────────────────────────────────*/
   --fuente-titulo: 'Playfair Display', Georgia, serif;
@@ -69,6 +69,7 @@
   --sombra-sm:  0 2px 8px rgba(26, 42, 74, 0.12);
   --sombra-md:  0 4px 20px rgba(26, 42, 74, 0.18);
   --sombra-lg:  0 8px 40px rgba(26, 42, 74, 0.25);
+  --box-sombra: 4px 4px 8px rgba(49, 46, 69, 0.749);
 
   /* ── TRANSICIONES ───────────────────────────────────────────*/
   --transicion-rapida:  0.2s ease;
