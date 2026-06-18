@@ -200,7 +200,12 @@ body {
 .btn--whatsapp:hover {
   opacity: 0.88;
 }
-
+/* ── ICONOS DE LA PAGINA ──────────────────────── */
+.iconos {
+  width: 4rem;
+  margin: 0;
+  padding: 0;
+}
 
 /* ── BOTÓN DE MÚSICA (fijo en pantalla) ──────────────────────── */
 .music-btn {
@@ -443,21 +448,16 @@ body {
   justify-content: center;
   align-items: left;
   gap: var(--espacio-sm);
-  margin-bottom: var(--espacio-lg);
+  margin-bottom: var(--espacio-sm);
 }
 
 .fecha__item {
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-align: start;
   line-height: 1;
 
-}
-
-.fecha__icono {
-  width: 4rem;
-  margin: 0;
-  padding: 0;
 }
 
 .fecha__dato {
@@ -477,9 +477,12 @@ body {
 /* ── LUGAR ───────────────────────────────────────────────────── */
 .lugar__info {
   display: flex;
-  align-items: flex-start;
-  gap: var(--espacio-sm);
+  justify-content: center;
   margin-bottom: var(--espacio-md);
+}
+
+.lugar__info div {
+  text-align: start;
 }
 
 .lugar__icono {
@@ -497,7 +500,7 @@ body {
 
 .lugar__direccion {
   color: var(--texto-suave);
-  font-size: var(--tamaño-sm);
+  font-size: var(--tamaño-md);
 }
 
 .lugar__mapa {
@@ -505,7 +508,7 @@ body {
   border-radius: var(--radio-md);
   overflow: hidden;
   margin-bottom: var(--espacio-md);
-  box-shadow: var(--sombra-md);
+  box-shadow: var(--box-sombra);
 }
 
 .lugar__mapa iframe {
@@ -517,18 +520,21 @@ body {
   display: block;
   width: fit-content;
   margin: 0 auto;
+  box-shadow: var(--box-sombra);
 }
 
 
 /* ── DRESS CODE ──────────────────────────────────────────────── */
 .dresscode__contenido {
   text-align: center;
+  font-size: var(--tamaño-md);
 }
 
 .dresscode__estilo {
   font-family: var(--fuente-titulo);
   font-size: var(--tamaño-xl);
   font-style: italic;
+  font-weight: var(--peso-normal);
   color: var(--color-acento);
   margin-bottom: var(--espacio-sm);
 }
@@ -538,21 +544,21 @@ body {
   margin-bottom: var(--espacio-xs);
 }
 
-.dresscode__paleta {
+/* .dresscode__paleta {
   display: flex;
   justify-content: center;
   gap: var(--espacio-sm);
   margin-top: var(--espacio-md);
-}
+} */
 
-.dresscode__color {
+/* .dresscode__color {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   display: block;
   box-shadow: var(--sombra-sm);
   border: 2px solid rgba(255,255,255,0.3);
-}
+} */
 
 
 /* ── REGALO ──────────────────────────────────────────────────── */
