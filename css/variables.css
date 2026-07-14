@@ -6,78 +6,113 @@
 
 :root {
 
-  /* ── PALETA PRINCIPAL ────────────────────────────────────────
-     Azules elegantes con acento dorado/champagne.
-     --color-1   más oscuro (fondos, textos sobre claro)
-     --color-2   azul medio (secciones acento)
-     --color-3   azul suave (fondos secundarios)
-     --color-4   casi blanco azulado (fondos claros)
+   /* ── PALETA PRINCIPAL — "Celeste clarito + Rosa platinado" ───
+     Basada en la referencia: celeste bebé claro + rosa brillante/
+     platinado, NO azul oscuro ni tonos apagados.
+     --color-1   celeste medio (texto/íconos sobre fondo claro)
+     --color-2   celeste real (hovers, detalles)
+     --color-3   celeste pastel (bordes, fondos secundarios)
+     --color-4   celeste clarito casi blanco (fondos)
   ──────────────────────────────────────────────────────────── */
-  --color-1:        rgb(60, 79, 140);   /* azul marino profundo */
-  --color-2:        rgb(86, 129, 186);   /* azul medio */
-  --color-3:        rgb(122, 156, 218);   /* azul grisáceo suave */
-  --color-4:        rgb(220, 232, 245);   /* azul casi blanco */
-  --color-acento:   rgb(228, 199, 105);   /* dorado/champagne — contrasta con los azules */
-  --color-acento-2: rgb(232, 213, 176);   /* dorado claro — para detalles sutiles */
+   --color-1: rgb(108, 183, 218);
+   /* celeste medio */
+   --color-2: rgb(140, 195, 219);
+   /* celeste real */
+   --color-3: rgb(196, 226, 238);
+   /* celeste pastel */
+   --color-4: rgb(232, 246, 251);
+   /* celeste clarito casi blanco */
 
-  /* ── TEXTOS ─────────────────────────────────────────────────*/
-  --texto-oscuro:   #1a2a4a;   /* igual que color-1, para párrafos sobre fondo claro */
-  --texto-claro:    #f0f4f9;   /* para textos sobre fondos oscuros */
-  --texto-suave:    #7a9bbf;   /* subtítulos, datos secundarios */
+   --color-acento: rgb(230, 179, 188);
+   /* rosa platinado — brillante, para texto/números sobre fondo oscuro */
+   --color-acento-2: rgb(247, 220, 224);
+   /* rosa platinado muy claro — detalles, texto secundario sobre oscuro */
+   --color-acento-solido: rgb(212, 124, 145);
+   /* rosa profundo — botones y texto que necesitan contraste sobre fondo claro */
+   --color-degrade-rosa: linear-gradient(115deg, var(--color-4) 10%, var(--color-1) 40%, var(--color-3) 55%, var(--color-1) 75%, var(--color-3) 95%);
+   /* Color degrade con brillo mas claro bien marcado*/
+   --color-degrade-oscuro: linear-gradient(115deg, var(--color-acento-solido) 10%, var(--color-acento) 40%, var(--color-acento-solido) 55%, var(--color-acento) 75%, var(--color-acento-solido) 95%);
+   /* Color degrade con brillo mas oscuro menos marcado*/
+   /* ── TEXTOS ─────────────────────────────────────────────────*/
+   --texto-oscuro: #562d48;
+   /* ciruela oscuro — párrafos, funciona sobre celeste y sobre rosa */
+   --texto-claro: #fffaf9;
+   /* blanco cálido — sobre fondos oscuros */
+   --texto-suave: #917c85;
+   /* gris-malva — subtítulos, datos secundarios */
 
-  /* ── FONDOS DE SECCIONES ────────────────────────────────────
-     Las secciones alternan entre claro y acento para dar ritmo.
+   /* ── FONDOS DE SECCIONES ────────────────────────────────────
+     Las secciones "acento" ahora son tarjetas CLARAS y brillosas
+     (vidrio rosado) que flotan sobre la foto de fondo — no cajas
+     oscuras. El texto adentro es oscuro.
   ──────────────────────────────────────────────────────────── */
-  --fondo-seccion:        rgb(231, 223, 249);  /* sección normal — blanco azulado translúcido */
-  --fondo-seccion-acento: rgba(26, 46, 82, 0.875);     /* sección acento — azul oscuro translúcido */
+   --fondo-seccion: rgb(253, 248, 250);
+   /* por si volvés a usar fondo sólido en .seccion */
+   --fondo-seccion-acento: rgba(255, 244, 246, 0.82);
+   /* tarjeta clara translúcida — vidrio rosado */
 
-  /* ── TIPOGRAFÍA ─────────────────────────────────────────────*/
-  --fuente-titulo: 'Playfair Display', Georgia, serif;
-  --fuente-cuerpo: 'Lato', Arial, sans-serif;
+   /* ── TIPOGRAFÍA ─────────────────────────────────────────────*/
+   --fuente-titulo: 'Playfair Display', Georgia, serif;
+   --fuente-cuerpo: 'Lato', Arial, sans-serif;
 
-  --tamaño-base:   16px;
-  --tamaño-sm:     0.875rem;  /* 14px */
-  --tamaño-md:     1rem;      /* 16px */
-  --tamaño-lg:     1.25rem;   /* 20px */
-  --tamaño-xl:     1.75rem;   /* 28px */
-  --tamaño-2xl:    2.5rem;    /* 40px */
-  --tamaño-3xl:    4rem;      /* 64px */
-  --tamaño-4xl:    16rem; 
+   --tamaño-base: 16px;
+   --tamaño-sm: 0.875rem;
+   /* 14px */
+   --tamaño-md: 1rem;
+   /* 16px */
+   --tamaño-lg: 1.25rem;
+   /* 20px */
+   --tamaño-xl: 1.75rem;
+   /* 28px */
+   --tamaño-2xl: 2.5rem;
+   /* 40px */
+   --tamaño-3xl: 4rem;
+   /* 64px */
+   --tamaño-4xl: 16rem;
 
-  
-  --peso-normal:   400;
-  --peso-medio:    500; /* Lato no tiene 500, usa 400 o 700 */
-  --peso-bold:     700;
 
-  --altura-linea:  1.65;
+   --peso-normal: 400;
+   --peso-medio: 500;
+   /* Lato no tiene 500, usa 400 o 700 */
+   --peso-bold: 700;
 
-  /* ── ESPACIADOS ─────────────────────────────────────────────*/
-  --espacio-xs:    0.5rem;    /*  8px */
-  --espacio-sm:    1rem;      /* 16px */
-  --espacio-md:    1.5rem;    /* 24px */
-  --espacio-lg:    2.5rem;    /* 40px */
-  --espacio-xl:    4rem;      /* 64px */
-  --espacio-2xl:   6rem;      /* 96px */
+   --altura-linea: 1.65;
 
-  /* ── BORDES Y REDONDEOS ─────────────────────────────────────*/
-  --radio-sm:      6px;
-  --radio-md:      12px;
-  --radio-lg:      20px;
-  --radio-pill:    999px;
+   /* ── ESPACIADOS ─────────────────────────────────────────────*/
+   --espacio-xs: 0.5rem;
+   /*  8px */
+   --espacio-sm: 1rem;
+   /* 16px */
+   --espacio-md: 1.5rem;
+   /* 24px */
+   --espacio-lg: 2.5rem;
+   /* 40px */
+   --espacio-xl: 4rem;
+   /* 64px */
+   --espacio-2xl: 6rem;
+   /* 96px */
 
-  /* ── SOMBRAS ────────────────────────────────────────────────*/
-  --sombra-sm:  0 2px 8px rgba(26, 42, 74, 0.12);
-  --sombra-md:  0 4px 20px rgba(26, 42, 74, 0.18);
-  --sombra-lg:  0 8px 40px rgba(26, 42, 74, 0.25);
-  --box-sombra: 4px 4px 8px rgba(49, 46, 69, 0.749);
+   /* ── BORDES Y REDONDEOS ─────────────────────────────────────*/
+   --radio-sm: 6px;
+   --radio-md: 12px;
+   --radio-lg: 20px;
+   --radio-pill: 999px;
 
-  /* ── TRANSICIONES ───────────────────────────────────────────*/
-  --transicion-rapida:  0.2s ease;
-  --transicion-normal:  0.4s ease;
-  --transicion-lenta:   0.7s ease;
+   /* ── SOMBRAS ────────────────────────────────────────────────*/
+   --sombra-sm: 0 2px 10px rgba(120, 70, 85, 0.14);
+   --sombra-md: 0 8px 24px rgba(120, 70, 85, 0.18);
+   --sombra-lg: 0 16px 40px rgba(120, 70, 85, 0.24);
+   --box-sombra: var(--sombra-md);
 
-  /* ── CONTENEDOR ─────────────────────────────────────────────*/
-  --ancho-contenedor:        600px;   /* móvil: ignora esto, usa 100% */
-  --ancho-contenedor-angosto: 480px;
-  --padding-contenedor:      1.25rem; /* padding lateral en móvil */
+   /* ── TRANSICIONES ───────────────────────────────────────────*/
+   --transicion-rapida: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+   --transicion-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   --transicion-lenta: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+   /* ── CONTENEDOR ─────────────────────────────────────────────*/
+   --ancho-contenedor: 600px;
+   /* móvil: ignora esto, usa 100% */
+   --ancho-contenedor-angosto: 480px;
+   --padding-contenedor: 1.25rem;
+   /* padding lateral en móvil */
 }

@@ -6,7 +6,9 @@
 
 
 /* ── RESET BÁSICO ────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -36,7 +38,8 @@ button {
   font-family: inherit;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -47,7 +50,7 @@ body {
   font-size: var(--tamaño-md);
   line-height: var(--altura-linea);
   color: var(--texto-oscuro);
-  background-color: var(--color-1);
+  background-color: var(--color-4);
 }
 
 .fondo-fijo {
@@ -56,17 +59,17 @@ body {
   left: 0;
   width: 100%;
   /* Usamos svh (short viewport height) para evitar que la barra de navegación del celular rompa el diseño */
-  height: 100svh; 
-  
+  height: 100svh;
+
   /* Cargamos tu imagen vertical en HD */
   background-image: url('../assets/images/deco/fondo-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
+
   /* Lo enviamos al fondo absoluto detrás de todo el contenido */
-  z-index: -1; 
-  
+  z-index: -1;
+
   /* Optimización para que los navegadores móviles procesen mejor la imagen */
   will-change: transform;
 }
@@ -103,19 +106,22 @@ body {
 /* Secciones con fondo oscuro (azul acento) */
 .seccion--acento {
   background: var(--fondo-seccion-acento);
-  color: var(--texto-claro);
+  color: var(--texto-oscuro);
   width: 92%;
-  justify-self: center;
+  margin: 0 auto;
   border-radius: var(--radio-md);
   box-shadow: var(--box-sombra);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 233, 137, 0.925);
 }
 
 .seccion--acento .seccion__titulo {
-  color: var(--color-acento);
+  color: var(--color-acento-solido);
 }
 
 .seccion--acento .seccion__subtitulo {
-  color: var(--color-acento-2);
+  color: var(--texto-suave);
 }
 
 /* Títulos de sección */
@@ -123,10 +129,11 @@ body {
   font-family: var(--fuente-titulo);
   font-size: var(--tamaño-2xl);
   font-weight: var(--peso-bold);
-  color: var(--color-1);
+  color: var(--texto-suave);
   text-align: center;
   margin-bottom: var(--espacio-sm);
   letter-spacing: 0.03em;
+  z-index: 1;
 }
 
 .seccion__subtitulo {
@@ -147,7 +154,7 @@ body {
   font-weight: var(--peso-bold);
   letter-spacing: 0.04em;
   text-align: center;
-  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida), opacity var(--transicion-rapida);
+  transition: transform var(--transicion-rapida), box-shadow var(--transicion-rapida), opacity var(--transicion-rapida), background var(--transicion-rapida), color var(--transicion-rapida);
   cursor: pointer;
 }
 
@@ -155,28 +162,35 @@ body {
   transform: scale(0.97);
 }
 
-/* Botón principal — dorado sobre oscuro */
+.btn:focus-visible {
+  outline: 2px solid var(--color-acento-solido);
+  outline-offset: 3px;
+}
+
+/* Botón principal — rosa platinado con leve brillo tipo foil */
 .btn--principal {
-  background: var(--color-acento);
-  color: var(--color-1);
+  background: var(--color-degrade-oscuro);
+  color: var(--texto-claro);
   box-shadow: var(--sombra-sm);
 }
 
 .btn--principal:hover {
   box-shadow: var(--sombra-md);
-  opacity: 0.9;
+  transform: translateY(-2px);
 }
 
-/* Botón secundario — borde azul */
+/* Botón secundario — borde rosa */
 .btn--secundario {
   background: transparent;
-  border: 2px solid var(--color-acento);
-  color: var(--color-acento);
+  border: 2px solid var(--color-acento-solido);
+  color: var(--color-acento-solido);
 }
 
 .btn--secundario:hover {
-  background: var(--color-acento);
-  color: var(--color-1);
+  background: var(--color-acento-solido);
+  border-color: var(--color-acento-solido);
+  color: var(--texto-claro);
+  transform: translateY(-2px);
 }
 
 /* Botón grande */
@@ -187,7 +201,7 @@ body {
 
 /* Botón WhatsApp */
 .btn--whatsapp {
-  background: #25d366;
+  background: var(--color-degrade-oscuro);
   color: #fff;
   box-shadow: var(--sombra-sm);
   padding: 0.85rem 2rem;
@@ -200,6 +214,7 @@ body {
 .btn--whatsapp:hover {
   opacity: 0.88;
 }
+
 /* ── ICONOS DE LA PAGINA ──────────────────────── */
 .iconos {
   width: 4rem;
@@ -216,9 +231,9 @@ body {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--color-1);
-  border: 2px solid var(--color-acento);
-  color: var(--color-acento);
+  background: var(--color-degrade-rosa);
+  border: 2px solid var(--color-acento-2);
+  color: var(--texto-claro);
   font-size: 1.3rem;
   display: flex;
   align-items: center;
@@ -229,7 +244,12 @@ body {
 
 .music-btn:hover {
   transform: scale(1.08);
-  background: var(--color-2);
+  background: var(--color-1);
+}
+
+.music-btn:focus-visible {
+  outline: 2px solid var(--color-acento-solido);
+  outline-offset: 3px;
 }
 
 /* Muestra el ícono correcto según el estado */
@@ -250,7 +270,8 @@ body {
 #hero {
   position: relative;
   width: 100%;
-  min-height: 100svh; /* svh: respeta la barra del navegador en celular */
+  min-height: 100svh;
+  /* svh: respeta la barra del navegador en celular */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,12 +303,10 @@ body {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(252, 252, 252, 0) 0%,
-    rgba(150, 234, 249, 0.199) 50%,
-    rgba(84, 168, 214, 0.927) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(180, 222, 237, 0.778) 0%,
+      rgba(75, 138, 145, 0.23) 45%,
+      rgba(31, 71, 83, 0.983) 100%);
 }
 
 .hero__glitter-up {
@@ -317,15 +336,15 @@ body {
   z-index: 1;
   text-align: center;
   color: var(--texto-claro);
-  padding: var(--espacio-2xl) var(--padding-contenedor) var(--espacio-lg);
+  padding: 0;
 }
 
 .hero__pre-titulo {
-  font-size: var(--tamaño-md);
+  font-size: var(--tamaño-lg);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-acento-2);
-  margin-bottom: var(--espacio-2xl);
+  color:rgb(19, 69, 73);
+  font-weight: var(--peso-bold);
 }
 
 .hero__titulo {
@@ -333,37 +352,58 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20rem;
+}
+
+.hero__titulo div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  height: 1;
+  margin-bottom: -5rem;
+}
+
+.hero_mis{
+  font-weight: var(--peso-bold);
+  font-size: var(--tamaño-3xl);
+  padding-top: 80px;
+  margin-right: -38px;
 }
 
 .hero__numero {
   font-size: var(--tamaño-4xl);
   font-weight: var(--peso-normal);
   color: var(--color-acento);
-  line-height: 1;
+  margin-top: -20px;
+  /* fallback si el navegador no soporta el degradé en texto */
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .hero__numero, .hero_mis {
+    background: var(--color-degrade-rosa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 .hero__nombre {
-  font-size: var(--tamaño-3xl);
-  font-style: italic;
-  font-weight: var(--peso-normal);
-  color: var(--texto-claro);
-  margin-top: var(--espacio-lg);
-}
-
-.hero__apellido {
   font-family: var(--fuente-titulo);
-  font-size: var(--tamaño-2xl);
+  font-size: 5rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--color-acento-2);
-  line-height: 1;
+  color: var(--color-3);
+  z-index: 1;
+  text-shadow: var(--sombra-md);
 }
 
 /* ── BIENVENIDA ──────────────────────────────────────────────── */
 .bienvenida-cuadro {
-  margin-top: 1rem;
+  margin-top: -1rem;
   z-index: 1;
-  margin-bottom: -5rem;
+  margin-bottom: -7rem;
 }
 
 .bienvenida__cuerpo {
@@ -371,7 +411,7 @@ body {
 }
 
 .bienvenida__glitter {
-  position:absolute;
+  position: absolute;
   top: 100;
   left: 0;
   width: 100%;
@@ -394,7 +434,7 @@ body {
 .bienvenida__firma {
   font-size: var(--tamaño-md) !important;
   font-style: normal !important;
-  color: var(--color-2) !important;
+  color: var(--color-acento-solido) !important;
   letter-spacing: 0.05em;
 }
 
@@ -412,25 +452,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgba(29, 50, 91, 0.871);
-  border: 1px solid var(--color-4);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--color-acento-2);
   border-radius: var(--radio-md);
   padding: var(--espacio-sm) var(--espacio-md);
   min-width: 0;
   width: 7rem;
   box-shadow: var(--box-sombra);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .seccion--acento .contador__item {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
 .contador__valor {
   font-family: var(--fuente-titulo);
   font-size: var(--tamaño-2xl);
   font-weight: var(--peso-bold);
-  color: var(--color-acento);
+  color: var(--color-acento-solido);
   line-height: 1;
 }
 
@@ -447,7 +489,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
   gap: var(--espacio-sm);
   margin-bottom: var(--espacio-sm);
 }
@@ -456,15 +498,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  text-align: start;
   line-height: 1;
-
 }
 
 .fecha__dato {
   font-family: var(--fuente-titulo);
   font-size: var(--tamaño-lg);
-  color: var(--texto-claro);
+  color: var(--texto-oscuro);
 }
 
 /* El botón de calendario queda centrado */
@@ -536,30 +576,31 @@ body {
   font-size: var(--tamaño-xl);
   font-style: italic;
   font-weight: var(--peso-normal);
-  color: var(--color-acento);
+  color: var(--color-acento-solido);
   margin-bottom: var(--espacio-sm);
 }
 
 .dresscode__contenido p {
-  color: var(--texto-claro);
+  color: var(--texto-oscuro);
   margin-bottom: var(--espacio-xs);
 }
 
-/* .dresscode__paleta {
+.dresscode__paleta {
   display: flex;
   justify-content: center;
   gap: var(--espacio-sm);
   margin-top: var(--espacio-md);
-} */
+}
 
-/* .dresscode__color {
+.dresscode__color {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   display: block;
   box-shadow: var(--sombra-sm);
-  border: 2px solid rgba(255,255,255,0.3);
-} */
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  transition: transform var(--transicion-rapida);
+}
 
 
 /* ── REGALO ──────────────────────────────────────────────────── */
@@ -579,7 +620,7 @@ body {
   background: var(--color-4);
   border-radius: var(--radio-md);
   padding: var(--espacio-md);
-  border: 1px solid var(--color-3);
+  border: 1px solid var(--color-acento-2);
   width: 100%;
   max-width: 320px;
 }
@@ -594,7 +635,8 @@ body {
 .carrusel {
   position: relative;
   width: 100%;
-  overflow: hidden;  /* IMPORTANTE: no cambies esto, es lo que oculta las fotos que salen del viewport */
+  overflow: hidden;
+  /* IMPORTANTE: no cambies esto, es lo que oculta las fotos que salen del viewport */
   padding: var(--espacio-md) 0;
 }
 
@@ -611,12 +653,14 @@ body {
 
 .carrusel__item {
   flex-shrink: 0;
-  width: 260px;         /* mismo valor que ANCHO_ITEM en gallery.js (menos los márgenes) */
+  width: 260px;
+  /* mismo valor que ANCHO_ITEM en gallery.js (menos los márgenes) */
   height: 320px;
   object-fit: cover;
   object-position: center top;
   border-radius: var(--radio-md);
-  margin: 0 8px;        /* 8px a cada lado = 16px total → ANCHO_ITEM en gallery.js = 276 */
+  margin: 0 8px;
+  /* 8px a cada lado = 16px total → ANCHO_ITEM en gallery.js = 276 */
   box-shadow: var(--sombra-md);
 }
 
@@ -632,18 +676,26 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(26, 42, 74, 0.75);
-  color: var(--color-acento);
+  background: rgba(168, 90, 108, 0.85);
+  color: var(--texto-claro);
   font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--sombra-sm);
-  transition: background var(--transicion-rapida);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background var(--transicion-rapida), transform var(--transicion-rapida);
 }
 
 .carrusel__flecha:hover {
-  background: var(--color-2);
+  background: var(--color-1);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carrusel__flecha:focus-visible {
+  outline: 2px solid var(--color-acento-solido);
+  outline-offset: 2px;
 }
 
 .carrusel__flecha--prev {
@@ -744,7 +796,7 @@ body {
 }
 
 .rsvp__o {
-  color: var(--color-acento-2);
+  color: var(--texto-suave);
   font-size: var(--tamaño-sm);
   letter-spacing: 0.1em;
 }
@@ -752,8 +804,8 @@ body {
 
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .footer {
-  background: var(--color-1);
-  color: var(--color-acento-2);
+  background: var(--color-acento-solido);
+  color: var(--texto-claro);
   text-align: center;
   padding: var(--espacio-lg) var(--padding-contenedor);
   font-size: var(--tamaño-sm);

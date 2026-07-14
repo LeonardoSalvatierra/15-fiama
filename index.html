@@ -79,7 +79,7 @@
         <!-- Reemplazá el src con tu imagen definitiva -->
          
         <img
-          src="assets/images/hero/fiama-7.jpeg"
+          src="assets/images/hero/hero.jpeg"
           alt="Fondo decorativo 15 años Fiama"
           class="hero__bg-img"
           loading="eager"
@@ -91,12 +91,15 @@
       </div>
 
       <div class="hero__content">
-        <p class="hero__pre-titulo">Te invito a celebrar mis</p>
+        <p class="hero__pre-titulo">Te invito a celebrar</p>
         <h1 class="hero__titulo">
-          <span class="hero__numero">15</span>
-          <span class="hero__nombre">Fiama</span>
+          <div>
+            <span class="hero_mis">Mis</span>
+            <span class="hero__numero">15</span>
+          </div>
+          
+          <span class="hero__nombre">Fiami</span>
         </h1>
-        <p class="hero__apellido">Medina</p>
       </div>
 
     </section>
@@ -113,15 +116,14 @@
     <section id="bienvenida" class="seccion">
       <div class="contenedor contenedor--angosto">
         <div class="bienvenida-cuadro">
-          <h2 class="seccion__titulo">¡Hola!</h2>
 
           <div class="bienvenida__cuerpo">
           <p>
-            Con inmensa alegría y emoción, quiero invitarte a compartir
-            conmigo uno de los días más especiales de mi vida: <strong>mis 15 años.</strong>
-            Sería grandioso tenerte a mi lado en esta noche mágica.
+            La vida está llena de momentos inolvidables, y este será uno de ellos.
+            Quiero compartir la alegría de celebrar mis <strong>15 años</strong> junto a las personas que más quiero.
+            ¡Espero que me acompañes!
           </p>
-          <p class="bienvenida__firma">Con amor, <strong>Fiama</strong> </p>
+          <p class="bienvenida__firma">Con amor, <strong>Fiama</strong></p>
           </div>
         </div>
 
@@ -179,11 +181,9 @@
 
         <div class="fecha__contenido">
           <div class="fecha__item">
-            <img src="assets/images/iconos/azul-calendar.png" alt="calendario azul" class="iconos" loading="lazy" />
             <p class="fecha__dato">Viernes, 18 de septiembre de 2026</p>
           </div>
           <div class="fecha__item">
-            <img src="assets/images/iconos/azul-clock.png" alt="reloj azul" class="iconos" loading="lazy" />
             <p class="fecha__dato">21:00 hs</p>
           </div>
         </div>
@@ -249,6 +249,42 @@
       </div>
     </section>
 
+    <!-- ============================================================
+              CONFIRMACIÓN DE ASISTENCIA (RSVP)
+              Sin backend. Dos opciones: Google Form o WhatsApp.
+              Reemplazá los links con los reales.
+            ============================================================ -->
+    <section id="confirmacion" class="seccion seccion--acento">
+      <div class="contenedor contenedor--angosto">
+    
+        <h2 class="seccion__titulo">¿Venís?</h2>
+        <p class="seccion__subtitulo">Confirmá tu asistencia antes del 5 de septiembre</p>
+    
+        <div class="rsvp__contenido">
+          <p>
+            Completá el formulario con tu nombre y la cantidad de
+            personas que vienen. ¡Te esperamos!
+          </p>
+          <!--REEMPLAZÁ 5493410000000 con el número real:
+          formato internacional sin + ni espacios (ej: 5493415551234)-->
+          <a href="https://wa.me/5493410000000?text=Hola%20Fiama!%20Confirmo%20mi%20asistencia%20a%20tus%2015%20%F0%9F%8E%89"
+            class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+            Confirmar por WhatsApp
+          </a>
+        </div>
+    
+      </div>
+    </section>
+
+    <!-- ============================================================
+          FOTO DECORATIVA
+          Foto de Fiama a pantalla completa como separador visual antes
+          del cierre. No tiene contenedor ni texto encima.
+          Reemplazá el src con la foto definitiva.
+        ============================================================ -->
+    <section id="foto" class="seccion-foto-decorativa">
+      <img src="assets/images/hero/fiama-7.jpeg" alt="Fiama Medina" class="foto-decorativa__imagen" loading="lazy" />
+    </section>
 
     <!-- ============================================================
       DRESS CODE
@@ -275,7 +311,6 @@
 
       </div>
     </section>
-
 
     <!-- ============================================================
       REGALO
@@ -456,70 +491,6 @@
             rel="noopener noreferrer"
           >
             Escribirle a Fiama 💬
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- ============================================================
-      FOTO DECORATIVA
-      Foto de Fiama a pantalla completa como separador visual antes
-      del cierre. No tiene contenedor ni texto encima.
-      Reemplazá el src con la foto definitiva.
-    ============================================================ -->
-    <section id="foto" class="seccion-foto-decorativa">
-      <img
-        src="assets/images/hero/fiama-portrait.jpg"
-        alt="Fiama Medina"
-        class="foto-decorativa__imagen"
-        loading="lazy"
-      />
-    </section>
-
-
-    <!-- ============================================================
-      CONFIRMACIÓN DE ASISTENCIA (RSVP)
-      Sin backend. Dos opciones: Google Form o WhatsApp.
-      Reemplazá los links con los reales.
-    ============================================================ -->
-    <section id="confirmacion" class="seccion seccion--acento">
-      <div class="contenedor contenedor--angosto">
-
-        <h2 class="seccion__titulo">¿Venís?</h2>
-        <p class="seccion__subtitulo">Confirmá tu asistencia antes del 5 de septiembre</p>
-
-        <div class="rsvp__contenido">
-          <span class="rsvp__icono" aria-hidden="true">🎉</span>
-          <p>
-            Completá el formulario con tu nombre y la cantidad de
-            personas que vienen. ¡Te esperamos!
-          </p>
-
-          <!-- REEMPLAZÁ el href con tu Google Form de confirmación -->
-          <a
-            href="https://forms.google.com/REEMPLAZAR-CON-TU-LINK"
-            class="btn btn--principal btn--grande"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Confirmar asistencia 🎊
-          </a>
-
-          <p class="rsvp__o">— o —</p>
-
-          <!--
-            REEMPLAZÁ 5493410000000 con el número real:
-            formato internacional sin + ni espacios (ej: 5493415551234)
-          -->
-          <a
-            href="https://wa.me/5493410000000?text=Hola%20Fiama!%20Confirmo%20mi%20asistencia%20a%20tus%2015%20%F0%9F%8E%89"
-            class="btn btn--whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Confirmar por WhatsApp
           </a>
         </div>
 
