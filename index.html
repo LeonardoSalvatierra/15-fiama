@@ -12,8 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/variables.css" />
@@ -35,6 +34,7 @@
       background-position: center;
     }
 -->
+
 <body class="page-bg">
 
   <!-- Este div es el fondo fijo real para celulares -->
@@ -55,13 +55,7 @@
     Podés reemplazar los emojis por SVG propios.
     Estilos: position fixed, esquina inferior derecha (o donde prefieras).
   ============================================================ -->
-  <button
-    id="btn-musica"
-    class="music-btn"
-    aria-label="Reproducir música de fondo"
-    aria-pressed="false"
-    title="Música"
-  >
+  <button id="btn-musica" class="music-btn" aria-label="Reproducir música de fondo" aria-pressed="false" title="Música">
     <span class="music-btn__icono music-btn__icono--play">🎵</span>
     <span class="music-btn__icono music-btn__icono--pausa">⏸</span>
   </button>
@@ -77,13 +71,9 @@
 
       <div class="hero__bg">
         <!-- Reemplazá el src con tu imagen definitiva -->
-         
-        <img
-          src="assets/images/hero/hero.jpeg"
-          alt="Fondo decorativo 15 años Fiama"
-          class="hero__bg-img"
-          loading="eager"
-        />
+
+        <img src="assets/images/hero/hero.jpeg" alt="Fondo decorativo 15 años Fiama" class="hero__bg-img"
+          loading="eager" />
         <!-- Overlay para que el texto se lea bien sobre la imagen -->
         <div class="hero__overlay"></div>
         <div class="hero__glitter-up"></div>
@@ -93,11 +83,11 @@
       <div class="hero__content">
         <p class="hero__pre-titulo">Te invito a celebrar</p>
         <h1 class="hero__titulo">
-          <div>
+          <div class="hero__titulo-fila">
             <span class="hero_mis">Mis</span>
             <span class="hero__numero">15</span>
           </div>
-          
+
           <span class="hero__nombre">Fiami</span>
         </h1>
       </div>
@@ -118,12 +108,12 @@
         <div class="bienvenida-cuadro">
 
           <div class="bienvenida__cuerpo">
-          <p>
-            La vida está llena de momentos inolvidables, y este será uno de ellos.
-            Quiero compartir la alegría de celebrar mis <strong>15 años</strong> junto a las personas que más quiero.
-            ¡Espero que me acompañes!
-          </p>
-          <p class="bienvenida__firma">Con amor, <strong>Fiama</strong></p>
+            <p>
+              La vida está llena de momentos inolvidables, y este será uno de ellos.
+              Quiero compartir la alegría de celebrar mis <strong>15 años</strong> junto a las personas que más quiero.
+              ¡Espero que me acompañes!
+            </p>
+            <p class="bienvenida__firma">Con amor, <strong>Fiami</strong></p>
           </div>
         </div>
 
@@ -140,12 +130,8 @@
 
         <h2 class="seccion__titulo">Faltan</h2>
 
-        <div
-          class="contador__grid"
-          data-fecha="2026-09-19T21:00:00"
-          aria-live="polite"
-          aria-label="Cuenta regresiva para el evento"
-        >
+        <div class="contador__grid" data-fecha="2026-09-19T21:00:00" aria-live="polite"
+          aria-label="Cuenta regresiva para el evento">
           <div class="contador__item">
             <span class="contador__valor" id="contador-dias">00</span>
             <span class="contador__label">Días</span>
@@ -194,12 +180,8 @@
           dates       = inicio/fin en formato YYYYMMDDTHHMMSS (sin zona horaria = local)
           location    = St Mary eventos - La República 7632, Rosario
         -->
-        <a
-           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fiama%20Medina%20-%20Mis%2015%20A%C3%B1os&dates=20260919T000000Z/20260919T060000Z&details=Celebraci%C3%B3n%20de%20los%2015%20a%C3%B1os%20de%20Fiama.%20%C2%A1Te%20esperamos%20para%20compartir%20una%20noche%20muy%20especial!&location=La%20Rep%C3%BAblica%207632,%20S2000%20Rosario,%20Santa%20Fe"
-          class="btn btn--principal"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fiama%20Medina%20-%20Mis%2015%20A%C3%B1os&dates=20260919T000000Z/20260919T060000Z&details=Celebraci%C3%B3n%20de%20los%2015%20a%C3%B1os%20de%20Fiama.%20%C2%A1Te%20esperamos%20para%20compartir%20una%20noche%20muy%20especial!&location=La%20Rep%C3%BAblica%207632,%20S2000%20Rosario,%20Santa%20Fe"
+          class="btn btn--principal" target="_blank" rel="noopener noreferrer">
           Guardar en mi calendario
         </a>
 
@@ -228,21 +210,14 @@
         </div>
 
         <div class="lugar__mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.2187610673823!2d-60.726236!3d-32.91881800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b652e3e6d47021%3A0xb04cd5a10d3b2a82!2sSt.Mary%20Club%20de%20eventos%2C%20sal%C3%B3n%20infantil%20y%20colonia%20de%20vacaciones!5e0!3m2!1ses-419!2sar!4v1781385876991!5m2!1ses-419!2sar" width="100%"
-            height="350"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicación del evento"></iframe>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.2187610673823!2d-60.726236!3d-32.91881800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b652e3e6d47021%3A0xb04cd5a10d3b2a82!2sSt.Mary%20Club%20de%20eventos%2C%20sal%C3%B3n%20infantil%20y%20colonia%20de%20vacaciones!5e0!3m2!1ses-419!2sar!4v1781385876991!5m2!1ses-419!2sar"
+            width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="Ubicación del evento"></iframe>
         </div>
 
-        <a
-          href="https://maps.app.goo.gl/8ynDdqsQVhYfb11C8"
-          class="btn btn--principal"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://maps.app.goo.gl/8ynDdqsQVhYfb11C8" class="btn btn--principal" target="_blank"
+          rel="noopener noreferrer">
           Cómo llegar
         </a>
 
@@ -256,23 +231,22 @@
             ============================================================ -->
     <section id="confirmacion" class="seccion seccion--acento">
       <div class="contenedor contenedor--angosto">
-    
+
         <h2 class="seccion__titulo">¿Venís?</h2>
         <p class="seccion__subtitulo">Confirmá tu asistencia antes del 5 de septiembre</p>
-    
+
         <div class="rsvp__contenido">
           <p>
-            Completá el formulario con tu nombre y la cantidad de
-            personas que vienen. ¡Te esperamos!
+            PAGAME 5MIL PA CONFIRMA GUACHO!! 
           </p>
           <!--REEMPLAZÁ 5493410000000 con el número real:
           formato internacional sin + ni espacios (ej: 5493415551234)-->
-          <a href="https://wa.me/5493410000000?text=Hola%20Fiama!%20Confirmo%20mi%20asistencia%20a%20tus%2015%20%F0%9F%8E%89"
+          <a href="https://wa.me/5493415801936?text=Hola!%20quiero%20confirmar%20mi%20asistencia%20a%20los%2015%20de%20Fiama%20"
             class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
             Confirmar por WhatsApp
           </a>
         </div>
-    
+
       </div>
     </section>
 
@@ -283,7 +257,7 @@
           Reemplazá el src con la foto definitiva.
         ============================================================ -->
     <section id="foto" class="seccion-foto-decorativa">
-      <img src="assets/images/hero/fiama-7.jpeg" alt="Fiama Medina" class="foto-decorativa__imagen" loading="lazy" />
+      <img src="assets/images/hero/hero.jpeg" alt="Fiama Medina" class="foto-decorativa__imagen" loading="lazy" />
     </section>
 
     <!-- ============================================================
@@ -299,14 +273,6 @@
           <p class="dresscode__estilo">Semiformal</p>
           <p>Un look que equilibra elegancia y comodidad para disfrutar la fiesta toda la noche.</p>
           <p> Evita usar ropa demasiado informal. ¡Te esperamos!</p>
-          <img src="assets/images/iconos/azul-camara.png" alt="location azul" class="iconos" loading="lazy" />
-          <!-- Paleta de colores: editá los background de cada span
-          <div class="dresscode__paleta" aria-label="Colores sugeridos">
-            <span class="dresscode__color" style="background:#f0c4d4;" title="Rosa pálido"></span>
-            <span class="dresscode__color" style="background:#c8dff0;" title="Celeste suave"></span>
-            <span class="dresscode__color" style="background:#d4f0c4;" title="Verde menta"></span>
-            <span class="dresscode__color" style="background:#f0e4c4;" title="Champagne"></span>
-          </div> -->
         </div>
 
       </div>
@@ -322,17 +288,20 @@
         <h2 class="seccion__titulo">Regalos</h2>
 
         <div class="regalo__contenido">
-          <span class="regalo__icono" aria-hidden="true">🎁</span>
           <p>
             Tu presencia es el mejor regalo. Pero si querés tener
-            un detalle, te dejamos mis datos bancarios:
+            un detalle conmigo , te dejamos mis datos bancarios:
           </p>
 
-          <div class="regalo__datos">
-            <p><strong>Alias:</strong> FIAMA.15.AÑOS</p>
-            <p><strong>CBU:</strong> 0000000000000000000000</p>
-          </div>
-          
+          <details class="regalo__desplegable">
+            <summary class="regalo__toggle">Ver datos bancarios</summary>
+            <div class="regalo__datos">
+              <p><strong>Alias:</strong> FIAMA.15.AÑOS</p>
+              <p><strong>CBU:</strong> 0000000000000000000000</p>
+              <p><strong>Titular:</strong> Fiama Medina</p>
+            </div>
+          </details>
+
 
           <!-- Opción B — Link externo (MercadoPago, lista de deseos, etc.):
           <a
@@ -358,38 +327,35 @@
     ============================================================ -->
     <section id="galeria" class="seccion seccion--acento">
 
-      <div class="contenedor">
-        <h2 class="seccion__titulo">Mi Historia</h2>
-        <p class="seccion__subtitulo">Algunos momentos que nos trajeron hasta acá</p>
-      </div>
-
       <div class="carrusel" id="carrusel" role="region" aria-label="Galería de fotos">
 
-        <button
-          class="carrusel__flecha carrusel__flecha--prev"
-          id="carrusel-prev"
-          aria-label="Foto anterior"
-        >&#8249;</button>
+        <button class="carrusel__flecha carrusel__flecha--prev" id="carrusel-prev"
+          aria-label="Foto anterior">&#8249;</button>
 
         <div class="carrusel__viewport">
           <div class="carrusel__track" id="carrusel-track">
             <!-- Reemplazá los src con tus fotos reales -->
-            <img src="assets/images/gallery/fiama-1.jpeg" alt="Fiama - recuerdo 1" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-2.jpeg" alt="Fiama - recuerdo 2" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-niña1.jpeg" alt="Fiama - recuerdo 3" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-3.jpeg" alt="Fiama - recuerdo 4" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-4.jpeg" alt="Fiama - recuerdo 5" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-niña2.jpeg" alt="Fiama - recuerdo 6" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-5.jpeg" alt="Fiama - recuerdo 7" class="carrusel__item" loading="lazy" />
-            <img src="assets/images/gallery/fiama-6.jpeg" alt="Fiama - recuerdo 8" class="carrusel__item" loading="lazy" />
+            <img src="assets/images/gallery/fiama-1.jpeg" alt="Fiama - recuerdo 1" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-2.jpeg" alt="Fiama - recuerdo 2" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-niña1.jpeg" alt="Fiama - recuerdo 3" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-3.jpeg" alt="Fiama - recuerdo 4" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-4.jpeg" alt="Fiama - recuerdo 5" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-niña2.jpeg" alt="Fiama - recuerdo 6" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-5.jpeg" alt="Fiama - recuerdo 7" class="carrusel__item"
+              loading="lazy" />
+            <img src="assets/images/gallery/fiama-6.jpeg" alt="Fiama - recuerdo 8" class="carrusel__item"
+              loading="lazy" />
           </div>
         </div>
 
-        <button
-          class="carrusel__flecha carrusel__flecha--next"
-          id="carrusel-next"
-          aria-label="Foto siguiente"
-        >&#8250;</button>
+        <button class="carrusel__flecha carrusel__flecha--next" id="carrusel-next"
+          aria-label="Foto siguiente">&#8250;</button>
 
       </div>
 
@@ -415,12 +381,8 @@
             escuchar esa noche y armamos la playlist juntos.
           </p>
           <!-- REEMPLAZÁ el href con el link de tu Google Form -->
-          <a
-            href="https://forms.google.com/REEMPLAZAR-CON-TU-LINK"
-            class="btn btn--principal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://forms.google.com/REEMPLAZAR-CON-TU-LINK" class="btn btn--principal" target="_blank"
+            rel="noopener noreferrer">
             Pedir una canción 🎵
           </a>
         </div>
@@ -452,12 +414,8 @@
             Google Fotos: https://photos.app.goo.gl/XXXXXX
             Google Drive: https://drive.google.com/drive/folders/XXXXXX?usp=sharing
           -->
-          <a
-            href="https://photos.app.goo.gl/REEMPLAZAR-CON-TU-LINK"
-            class="btn btn--principal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://photos.app.goo.gl/REEMPLAZAR-CON-TU-LINK" class="btn btn--principal" target="_blank"
+            rel="noopener noreferrer">
             Subir mis fotos y videos 📤
           </a>
         </div>
@@ -484,12 +442,8 @@
             una palabra de cariño. Este es tu espacio.
           </p>
           <!-- REEMPLAZÁ el href con el link de tu Google Form de mensajes -->
-          <a
-            href="https://forms.google.com/REEMPLAZAR-CON-TU-LINK"
-            class="btn btn--principal"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://forms.google.com/REEMPLAZAR-CON-TU-LINK" class="btn btn--principal" target="_blank"
+            rel="noopener noreferrer">
             Escribirle a Fiama 💬
           </a>
         </div>
@@ -517,4 +471,5 @@
   <script src="js/music.js" defer></script>
 
 </body>
+
 </html>

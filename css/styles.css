@@ -103,17 +103,18 @@ body {
   transform: none;
 }
 
-/* Secciones con fondo oscuro (azul acento) */
+/* Secciones con tarjeta clara — ahora con textura de imagen en vez de color liso */
 .seccion--acento {
-  background: var(--fondo-seccion-acento);
+  background-image: url('../assets/images/deco/fondo-card.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--texto-oscuro);
   width: 92%;
   margin: 0 auto;
   border-radius: var(--radio-md);
   box-shadow: var(--box-sombra);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 233, 137, 0.925);
+  border: var(--borde-dorado);
 }
 
 .seccion--acento .seccion__titulo {
@@ -172,6 +173,7 @@ body {
   background: var(--color-degrade-oscuro);
   color: var(--texto-claro);
   box-shadow: var(--sombra-sm);
+  border: var(--borde-pequeño);
 }
 
 .btn--principal:hover {
@@ -209,6 +211,7 @@ body {
   font-weight: var(--peso-bold);
   display: inline-block;
   transition: opacity var(--transicion-rapida);
+  border: var(--borde-pequeño);
 }
 
 .btn--whatsapp:hover {
@@ -332,18 +335,23 @@ body {
 }
 
 .hero__content {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   text-align: center;
   color: var(--texto-claro);
-  padding: 0;
+  padding: clamp(1.5rem, 7svh, 3rem) var(--padding-contenedor) clamp(2.5rem, 10svh, 4.5rem);
 }
 
 .hero__pre-titulo {
-  font-size: var(--tamaño-lg);
+  font-size: clamp(1.05rem, 2vw, 2.8rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color:rgb(19, 69, 73);
+  color: rgb(19, 69, 73);
   font-weight: var(--peso-bold);
 }
 
@@ -352,37 +360,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20rem;
 }
 
-.hero__titulo div{
+.hero__titulo-fila {
   display: flex;
   flex-direction: row;
   align-items: center;
-  text-align: center;
-  justify-content: space-around;
-  height: 1;
-  margin-bottom: -5rem;
 }
 
-.hero_mis{
+.hero_mis {
   font-weight: var(--peso-bold);
-  font-size: var(--tamaño-3xl);
-  padding-top: 80px;
-  margin-right: -38px;
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  margin-right: -0.35em;
+  margin-top: 2rem;
+  /* se acerca al número, escala junto con la letra */
 }
 
 .hero__numero {
-  font-size: var(--tamaño-4xl);
+  font-size: clamp(12rem, 15vw, 18rem);
   font-weight: var(--peso-normal);
   color: var(--color-acento);
-  margin-top: -20px;
+  
   /* fallback si el navegador no soporta el degradé en texto */
 }
 
 @supports (background-clip: text) or (-webkit-background-clip: text) {
-  .hero__numero, .hero_mis {
-    background: var(--color-degrade-rosa);
+
+  .hero__numero,
+  .hero_mis {
+    background: var(--color-degrade-celeste);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -391,12 +397,14 @@ body {
 
 .hero__nombre {
   font-family: var(--fuente-titulo);
-  font-size: 5rem;
+  font-size: clamp(4.25rem, 3.5rem + 3vw, 6rem);
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--color-3);
   z-index: 1;
   text-shadow: var(--sombra-md);
+  margin-top: -0.15em;
+  /* se acerca a la fila de arriba, escala con su propia letra */
 }
 
 /* ── BIENVENIDA ──────────────────────────────────────────────── */
@@ -564,7 +572,6 @@ body {
   box-shadow: var(--box-sombra);
 }
 
-
 /* ── DRESS CODE ──────────────────────────────────────────────── */
 .dresscode__contenido {
   text-align: center;
@@ -616,13 +623,61 @@ body {
   font-size: 2.5rem;
 }
 
-.regalo__datos {
-  background: var(--color-4);
-  border-radius: var(--radio-md);
-  padding: var(--espacio-md);
-  border: 1px solid var(--color-acento-2);
+.regalo__desplegable {
   width: 100%;
   max-width: 320px;
+}
+
+/* Saca la flechita triangular por defecto del navegador */
+.regalo__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.regalo__toggle {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espacio-xs);
+  background: transparent;
+  border: 2px solid var(--color-acento-solido);
+  color: var(--color-acento-solido);
+  font-weight: var(--peso-bold);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radio-pill);
+  transition: background var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.regalo__toggle:hover {
+  background: var(--color-acento-solido);
+  color: var(--texto-claro);
+}
+
+.regalo__toggle::after {
+  content: '▾';
+  transition: transform var(--transicion-rapida);
+}
+
+.regalo__desplegable[open] .regalo__toggle::after {
+  transform: rotate(180deg);
+}
+
+.regalo__desplegable[open] .regalo__toggle {
+  background: var(--color-acento-solido);
+  color: var(--texto-claro);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.regalo__datos {
+  background: var(--color-4);
+  border-radius: 0 0 var(--radio-md) var(--radio-md);
+  padding: var(--espacio-md);
+  border: 1px solid var(--color-acento-2);
+  border-top: none;
+  width: 100%;
+  animation: fadeInUp 0.3s ease both;
 }
 
 .regalo__datos p {
@@ -761,10 +816,11 @@ body {
 /* ── FOTO DECORATIVA ─────────────────────────────────────────── */
 .seccion-foto-decorativa {
   width: 100%;
-  max-height: 70vh;
-  overflow: hidden;
+  padding: 0 var(--padding-contenedor);
+  box-sizing: border-box;
   display: block;
-
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   opacity: 0;
   transition: opacity var(--transicion-lenta);
 }
@@ -775,12 +831,16 @@ body {
 
 .foto-decorativa__imagen {
   width: 100%;
-  height: 70vh;
+  max-width: var(--ancho-contenedor);
+  height: 40vh;
+  max-height: 70vh;
+  margin: 0 auto;
+  border-radius: var(--radio-lg);
   object-fit: cover;
-  object-position: center top;
+  object-position: center 85%;
   display: block;
+  border: var(--borde-dorado);
 }
-
 
 /* ── CONFIRMACIÓN (RSVP) ─────────────────────────────────────── */
 .rsvp__contenido {

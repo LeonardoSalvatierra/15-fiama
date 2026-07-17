@@ -26,14 +26,8 @@
     font-size: var(--tamaño-2xl);
   }
 
-  /* Hero: número más grande */
-  .hero__numero {
-    font-size: 5.5rem;
-  }
+  /* Hero: el tamaño ahora es fluido (clamp() en styles.css), no hace falta redefinirlo acá */
 
-  .hero__nombre {
-    font-size: 3.5rem;
-  }
 
   /* Contador: los 4 items en fila sin wrap */
   .contador__grid {
@@ -78,9 +72,9 @@
     right: 16px;
   }
 
-  /* Foto decorativa: más alta */
+  /* Foto decorativa: un poco más alta que en celular, sigue siendo horizontal */
   .foto-decorativa__imagen {
-    height: 80vh;
+    height: 45vh;
   }
 
 }
@@ -93,24 +87,13 @@
 
   /* Contenedores más anchos */
   :root {
-    --ancho-contenedor:        720px;
+    --ancho-contenedor: 720px;
     --ancho-contenedor-angosto: 560px;
-    --padding-contenedor:      2.5rem;
+    --padding-contenedor: 2.5rem;
   }
 
-  /* Hero */
-  .hero__numero {
-    font-size: var(--tamaño-3xl); /* 4rem */
-  }
+  /* Hero: el tamaño ahora es fluido (clamp() en styles.css), no hace falta redefinirlo acá */
 
-  .hero__nombre {
-    font-size: var(--tamaño-2xl);
-  }
-
-  .hero__pre-titulo,
-  .hero__apellido {
-    font-size: var(--tamaño-md);
-  }
 
   /* El fondo fijo (background-attachment: fixed) funciona bien en desktop;
      en móvil lo desactivamos porque causa problemas de rendimiento */
@@ -150,7 +133,7 @@
 
   /* Foto decorativa */
   .foto-decorativa__imagen {
-    height: 90vh;
+    height: 40vh;
   }
 
 }
@@ -195,7 +178,10 @@
    ACCESIBILIDAD — reduce animaciones si el usuario lo prefiere
    ════════════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -29,10 +29,12 @@
    /* rosa platinado muy claro — detalles, texto secundario sobre oscuro */
    --color-acento-solido: rgb(212, 124, 145);
    /* rosa profundo — botones y texto que necesitan contraste sobre fondo claro */
-   --color-degrade-rosa: linear-gradient(115deg, var(--color-4) 10%, var(--color-1) 40%, var(--color-3) 55%, var(--color-1) 75%, var(--color-3) 95%);
+   --color-degrade-oscuro: linear-gradient(115deg, var(--color-3) 10%, var(--color-1) 40%, var(--color-2) 55%, var(--color-1) 75%, var(--color-3) 95%);
    /* Color degrade con brillo mas claro bien marcado*/
-   --color-degrade-oscuro: linear-gradient(115deg, var(--color-acento-solido) 10%, var(--color-acento) 40%, var(--color-acento-solido) 55%, var(--color-acento) 75%, var(--color-acento-solido) 95%);
+   --color-degrade-rosa: linear-gradient(115deg, var(--color-acento-solido) 10%, var(--color-acento) 40%, var(--color-acento-solido) 55%, var(--color-acento) 75%, var(--color-acento-solido) 95%);
    /* Color degrade con brillo mas oscuro menos marcado*/
+   --color-degrade-celeste:linear-gradient(115deg, var(--color-4) 10%, var(--color-1) 40%, var(--color-3) 55%, var(--color-1) 75%, var(--color-3) 95%);
+   /*Color degrade con brillo marcado celeste*/
    /* ── TEXTOS ─────────────────────────────────────────────────*/
    --texto-oscuro: #562d48;
    /* ciruela oscuro — párrafos, funciona sobre celeste y sobre rosa */
@@ -97,6 +99,9 @@
    --radio-md: 12px;
    --radio-lg: 20px;
    --radio-pill: 999px;
+
+   --borde-dorado: 4px solid rgba(209, 192, 113, 0.524);
+   --borde-pequeño: 2px solid rgba(239, 219, 129, 0.615);
 
    /* ── SOMBRAS ────────────────────────────────────────────────*/
    --sombra-sm: 0 2px 10px rgba(120, 70, 85, 0.14);
