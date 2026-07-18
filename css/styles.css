@@ -344,7 +344,7 @@ body {
   justify-content: space-between;
   text-align: center;
   color: var(--texto-claro);
-  padding: clamp(1.5rem, 7svh, 3rem) var(--padding-contenedor) clamp(2.5rem, 10svh, 4.5rem);
+  padding: clamp(1.5rem, 7svh, 3rem) var(--padding-contenedor) clamp(-1rem, 10svh, 0.3rem);
 }
 
 .hero__pre-titulo {
@@ -366,20 +366,25 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: -6rem;
 }
 
 .hero_mis {
-  font-weight: var(--peso-bold);
-  font-size: clamp(3.5rem, 9vw, 6rem);
-  margin-right: -0.35em;
-  margin-top: 2rem;
+  font-family: "MonteCarlo", cursive;
+  font-weight: 600;
+  font-style: normal;
+  -webkit-text-stroke: 0.1px rgba(252, 234, 154, 0.353);
+  font-size: clamp(3rem, 9vw, 4rem);
+  margin-right: -0.25em;
+  margin-top: 3rem;
   /* se acerca al número, escala junto con la letra */
 }
 
 .hero__numero {
-  font-size: clamp(12rem, 15vw, 18rem);
+  font-family: var(--fuente-titulo);
   font-weight: var(--peso-normal);
-  color: var(--color-acento);
+  -webkit-text-stroke: 1.5px rgba(252, 234, 154, 0.604);
+  font-size: clamp(9rem, 15vw, 16rem);
   
   /* fallback si el navegador no soporta el degradé en texto */
 }
@@ -396,14 +401,17 @@ body {
 }
 
 .hero__nombre {
-  font-family: var(--fuente-titulo);
-  font-size: clamp(4.25rem, 3.5rem + 3vw, 6rem);
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
+  font-family: "MonteCarlo", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(9rem, 6.5rem + 3vw, 11rem);
+  -webkit-text-stroke: 1px rgba(252, 234, 154, 0.453);
   color: var(--color-3);
   z-index: 1;
   text-shadow: var(--sombra-md);
   margin-top: -0.15em;
+  margin-left: -1rem;
+  
   /* se acerca a la fila de arriba, escala con su propia letra */
 }
 
