@@ -90,7 +90,7 @@ body {
 
 /* ── SECCIONES ───────────────────────────────────────────────── */
 .seccion {
-  padding: var(--espacio-xl) 0;
+  padding: var(--espacio-lg) 0;
 
   /* Animación de entrada (main.js agrega la clase .visible) */
   opacity: 0;
@@ -417,9 +417,9 @@ body {
 
 /* ── BIENVENIDA ──────────────────────────────────────────────── */
 .bienvenida-cuadro {
-  margin-top: -1rem;
+  margin-top: 3rem;
   z-index: 1;
-  margin-bottom: -7rem;
+  margin-bottom: -5rem;
 }
 
 .bienvenida__cuerpo {
@@ -534,29 +534,25 @@ body {
 /* ── LUGAR ───────────────────────────────────────────────────── */
 .lugar__info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: var(--espacio-md);
+  margin-bottom: var(--espacio-sm);
 }
 
 .lugar__info div {
   text-align: start;
 }
 
-.lugar__icono {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
 .lugar__nombre {
   font-family: var(--fuente-titulo);
   font-size: var(--tamaño-lg);
   font-weight: var(--peso-bold);
-  color: var(--color-1);
+  color: var(--texto-suave);
   margin-bottom: 4px;
 }
 
 .lugar__direccion {
-  color: var(--texto-suave);
+  color: var(--texto-oscuro);
   font-size: var(--tamaño-md);
 }
 
@@ -566,6 +562,7 @@ body {
   overflow: hidden;
   margin-bottom: var(--espacio-md);
   box-shadow: var(--box-sombra);
+  border: var(--borde-pequeño);
 }
 
 .lugar__mapa iframe {
@@ -855,18 +852,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--espacio-md);
+  gap: var(--espacio-sm);
   text-align: center;
 }
 
-.rsvp__icono {
-  font-size: 2.5rem;
-}
-
-.rsvp__o {
-  color: var(--texto-suave);
-  font-size: var(--tamaño-sm);
-  letter-spacing: 0.1em;
+.confirmacion-estilo {
+  font-family: var(--fuente-titulo);
+  font-size: var(--tamaño-xl);
+  font-style: italic;
+  font-weight: var(--peso-normal);
+  color: var(--texto-oscuro);
+  margin-bottom: var(--espacio-sm);
+  margin-top: -1rem;
 }
 
 
